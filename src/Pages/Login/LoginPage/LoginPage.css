@@ -1,0 +1,6 @@
+.login-form input{
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid lightgray;
+}

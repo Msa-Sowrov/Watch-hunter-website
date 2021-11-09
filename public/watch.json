@@ -1,0 +1,74 @@
+[
+    {
+      "name": "Patek Philippe",
+      "img": "https://i.ibb.co/S57WfyC/Patek-Philippe.png",
+      "desf": "Known for inventing the very first wristwatch, Patek \t\tPhilippe ",
+      "price": "26,400"
+    },
+    {
+      "name": "Vacheron Constantin",
+      "img": "https://i.ibb.co/VHLQn1V/Vacheron-Constantin.png",
+      "desf": "Next in our famous watch brands list is the oldest continuously operating watchmaker in the world. ",
+      "price": "9250"
+    },
+    {
+      "name": "Audemars Piguet",
+      "img": "https://i.ibb.co/PmXcrQ8/prestigetime.png",
+      "desf": "Another member of the prestigious \"holy trinity\" in watchmaking, Audemars Piguet has been manufacturing some of the most spectacular watches since being founded in 1875. ",
+      "price": "10000"
+    },
+    {
+      "name": "Blancpain",
+      "img": "https://i.ibb.co/zQXpQ9S/blancpain.png",
+      "desf": "Blancpain was established in 1735 and is slightly older than Vacheron Constantin but did not operate under the Blancpain brand from the day it was established. ",
+      "price": "15,440"
+    },
+    {
+      "name": "Ulysse Nardin",
+      "img": "https://i.ibb.co/VHLQn1V/Vacheron-Constantin.png",
+      "desf": "In 1846 a Ulysse Nardin opened its manufacture. At the time it was not more than a watch stand, but soon became one of the powerhouses in the watch industry",
+      "price": "6320"
+    },
+    {
+      "name": "Jaeger-LeCoultre",
+      "img": "https://i.ibb.co/yWRtvj3/Jaeger-Le-Coultre.png",
+      "desf": "Jaeger-LeCoultre is a Swiss luxury brand of watches that is highly respected by its peers. Many believe it is to be one of the best luxury watch manufacturers and arguably one of the most vertically integrated prestigious watchmakers in the world.",
+      "price": "6380"
+    },
+    {
+      "name": "Omega",
+      "img": "https://i.ibb.co/6WQhPtf/omega.png",
+      "desf": "Omega SA is one of the more popular brands of luxury watches yet, they are not necessarily one of the most expensive watch brands out there compared to many watchmakers mentioned here. ",
+      "price": "5146"
+    },
+    {
+      "name": "Glashutte Original",
+      "img": "https://i.ibb.co/vP51D59/Glashutte-Original.png",
+      "desf": "When it comes to high-end watches, people usually think of Switzerland since Swiss watchmakers make up the bulk of the pack.",
+      "price": "4475"
+    },
+    {
+      "name": "Rolex",
+      "img": "https://i.ibb.co/3dG6rtV/rolex.png",
+      "desf": "It is estimated that their production is approximately 2,000 watches per day. One of the things about this most famous watch brand ",
+      "price": "42000"
+    },
+    {
+      "name": "Jaquet Droz",
+      "img": "https://i.ibb.co/kQK94d7/Jaquet-Droz.png",
+      "desf": "A watchmaker that started off as an exquisite clockmaker, Jaquet Droz was the first to open a factory in Geneve, Switzerland, and soon became one of the top 10 watch brands in the world.",
+      "price": "2000"
+    },
+    {
+      "name": "Breguet",
+      "img": "https://i.ibb.co/zFCL3YF/Breguet.png",
+      "desf": "As one of the oldest watchmakers in existence, Breguet has earned their respect both in Switzerland and the rest of the world of watchmaking.",
+      "price": "2300"
+    },
+    {
+      "name": "IWC Schaffhausen",
+      "img": "https://i.ibb.co/hXZXbC4/IWC-Schaffhausen.png",
+      "desf": "A famous watch brand lineup without IWC would be a sin. Being one of those old luxury watch brands that date back to 1869, ",
+      "price": "3450"
+    }
+  ]
