@@ -163,8 +163,8 @@ const AdminDashbord = () => {
                                <td>{o.time}</td>
                                <td className="text-danger">{o.status}</td>
                                <td>
-                                   <button onClick={()=>shipped(o, o._id)}><i class="fas fa-shipping-fast"></i></button>
-                                   <button onClick={()=>removeOrder(o._id)}><i class="fas fa-trash"></i></button>
+                                   <button onClick={()=>shipped(o, o._id)}><i className="fas fa-shipping-fast"></i></button>
+                                   <button onClick={()=>removeOrder(o._id)}><i className="fas fa-trash"></i></button>
                                 </td>
                                 
                             </tr>
@@ -195,7 +195,7 @@ const AdminDashbord = () => {
                                <td>{o.name}</td>
                                <td>{o.price}</td>
                                <td>
-                                   <button onClick={()=>deleteProducts(o._id)}><i class="fas fa-trash"></i></button>
+                                   <button onClick={()=>deleteProducts(o._id)}><i className="fas fa-trash"></i></button>
                                 </td>
                                 
                             </tr>

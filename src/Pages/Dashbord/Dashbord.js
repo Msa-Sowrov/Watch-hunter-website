@@ -28,6 +28,10 @@ const Dashbord = () => {
             },
             body:JSON.stringify(data)
         })
+        .then(res=>res.json())
+        .then(data=>{
+            alert("successfuly review <added></added>")
+        })
     }
     useEffect(()=>{
         fetch('http://localhost:5000/order')
