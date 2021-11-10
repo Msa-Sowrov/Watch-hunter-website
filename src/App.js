@@ -11,6 +11,8 @@ import PrivateRoute from './Pages/Context/PrivateRouter/PrivateRoute';
 import Purchase from './Pages/Purchase/Purchase';
 import Dashbord from './Pages/Dashbord/Dashbord';
 import AdminDashbord from './Pages/AdminDashbord/AdminDashbord';
+import Footer from './Pages/Footer/Footer';
+import AdminRoute from './Pages/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -24,27 +26,35 @@ function App() {
         <Route path="/explore">
           <Navbar></Navbar>
           <Explore></Explore>
+          <Footer></Footer>
+
         </Route>
         <Route path="/login">
           <Navbar></Navbar>
           <LoginPage></LoginPage>
+          <Footer></Footer>
           </Route>
         <PrivateRoute path="/purchase:id">
           <Navbar></Navbar>
           <Purchase></Purchase>
+          <Footer></Footer>
           </PrivateRoute>
+
         <PrivateRoute path="/dashbord">
           <Navbar></Navbar>
           <Dashbord></Dashbord>
+          <Footer></Footer>
           </PrivateRoute>
-        <PrivateRoute path="/adminDashbord">
+        <AdminRoute path="/adminDashbord">
           <Navbar></Navbar>
           <AdminDashbord></AdminDashbord>
-          </PrivateRoute>
+          </AdminRoute>
         <Route path="/signin">
           <Navbar></Navbar>
             <SignIn>
             </SignIn>
+          <Footer></Footer>
+
           </Route>
       </Switch>
     </BrowserRouter>

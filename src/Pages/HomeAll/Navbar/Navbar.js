@@ -7,10 +7,9 @@ const Navbar = () => {
   const {user, logOut} = useAuth();
   const [realUser, setRealUser] = useState({})
   useEffect(()=>{
-    fetch('http://localhost:5000/user')
+    fetch('https://hidden-hollows-67955.herokuapp.com/user')
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
       const u = data.find(o=>o.email === user.email)
       setRealUser(u)
     })
@@ -46,17 +45,17 @@ const Navbar = () => {
         
 
       </ul>
-      <form className="d-flex">
+      <form className="d-flex  align-items-center">
         {
           user.email?
             <button onClick={logOut} className="btn btn-danger">Logout</button>
             :
             <Link to="/signin">
-                <button className="btn">login</button>
+                <button className="btn btn-success">login</button>
           </Link>
           }
           
-       <span>sign in as:{realUser?.name}</span>
+       <span className="text-white mx-2">sign in as:{realUser?.name}</span>
       </form>
     </div>
   </div>

@@ -16,7 +16,7 @@ const LoginPage = () => {
             name:data.name,
             email:data.email
         }
-        fetch('http://localhost:5000/user',{
+        fetch('https://hidden-hollows-67955.herokuapp.com/user',{
             method:'post',
             headers:{
                 'content-type':'application/json'

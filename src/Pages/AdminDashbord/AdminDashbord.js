@@ -8,26 +8,26 @@ const AdminDashbord = () => {
     const [allUser, setAllUser] = useState()
     const [products, setProducts] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://hidden-hollows-67955.herokuapp.com/products')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[products])
     useEffect(()=>{
-        fetch('http://localhost:5000/order')
+        fetch('https://hidden-hollows-67955.herokuapp.com/order')
         .then(res=>res.json())
         .then(data=>{
             setOrder(data)
         })
     },[order])
     useEffect(()=>{
-        fetch('http://localhost:5000/user')
+        fetch('https://hidden-hollows-67955.herokuapp.com/user')
         .then(res=>res.json())
         .then(data=>setAllUser(data))
     },[allUser])
 
     //make admin
     const makeAdnin= (data, id) =>{
-        const url = `http://localhost:5000/user${id}`
+        const url = `https://hidden-hollows-67955.herokuapp.com/user${id}`
         fetch(url,{
             method:"PUT",
             headers:{
@@ -54,7 +54,7 @@ const AdminDashbord = () => {
             status:'Shipped',
             price:order.price
         }
-        const url = `http://localhost:5000/order${id}`
+        const url = `https://hidden-hollows-67955.herokuapp.com/order${id}`
         fetch(url,{
             method:'put',
             headers:{
@@ -72,7 +72,7 @@ const AdminDashbord = () => {
 
     //remove order
     const removeOrder =(id)=>{
-        const url = `http://localhost:5000/order${id}`
+        const url = `https://hidden-hollows-67955.herokuapp.com/order${id}`
         const confirm = window.confirm('are you sure to remove this order')
         if(confirm){
             fetch(url,{
@@ -88,7 +88,7 @@ const AdminDashbord = () => {
     }
     //detete products
     const deleteProducts =(id)=>{
-        const url = `http://localhost:5000/products${id}`
+        const url = `https://hidden-hollows-67955.herokuapp.com/products${id}`
         const confirm = window.confirm('are you sure to remove this order')
         if(confirm){
             fetch(url,{
@@ -105,7 +105,7 @@ const AdminDashbord = () => {
     //add products
     const onSubmit = data =>{
         console.log(data)
-        fetch('http://localhost:5000/products',{
+        fetch('https://hidden-hollows-67955.herokuapp.com/products',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -116,9 +116,9 @@ const AdminDashbord = () => {
     return (
         <div>
             <div className="container">
-                <div className="row d-flex gap-4">
-                    <div className="col-md-4">
-                        <h3>Make An Admin</h3>
+                <div className="row d-flex gap-4 my-5">
+                    <div className="review col-md-4">
+                        <h3 className="text-primary">Make An Admin</h3>
                         <div className="table-responsive">
                         <table className="table align-middle">
                             <thead>
@@ -132,7 +132,9 @@ const AdminDashbord = () => {
 
                                     allUser?.map(u=><tr key={u._id}>
                                     <td>{u.email}</td>
-                                <button onClick={()=>makeAdnin(u, u._id)} className="btn mb-2">Make Admin</button>
+                                    <td>
+                                         <button onClick={()=>makeAdnin(u, u._id)} className="btn mb-2">Make Admin</button>
+                                    </td>
                                     </tr>
                                         )
                                     }   
@@ -140,8 +142,8 @@ const AdminDashbord = () => {
                             </table>
                     </div>
                     </div>
-                    <div className="col-md-7">
-                        <h3>Order List</h3>
+                    <div className="review col-md-7">
+                        <h3 className="text-primary">Order List</h3>
                         <div className="table-responsive">
                         <table className="table align-middle">
                             <thead>
@@ -176,8 +178,8 @@ const AdminDashbord = () => {
                             </div>
 
                     </div>
-                    <div className="col-md-6">
-                    <h1>Product Managment</h1>
+                    <div className="review col-md-6">
+                    <h2 className="text-primary">Product Managment</h2>
                     <div className="table-responsive">
                         <table className="table align-middle">
                             <thead>
@@ -207,8 +209,8 @@ const AdminDashbord = () => {
                             </div>
 
                     </div>
-                    <div className="col-md-5">
-                        <h1>Add More Products</h1>
+                    <div className="review col-md-5">
+                        <h2 className="text-primary">Add More Products</h2>
                         <form className="add-products" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("img")} placeholder="img-url ratio:300-200" />
                             <input {...register("name")} placeholder="name"/>

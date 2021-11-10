@@ -21,7 +21,7 @@ const Dashbord = () => {
             name: user.displayName
         }
         console.log(data)
-        fetch('http://localhost:5000/review',{
+        fetch('https://hidden-hollows-67955.herokuapp.com/review',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -34,7 +34,7 @@ const Dashbord = () => {
         })
     }
     useEffect(()=>{
-        fetch('http://localhost:5000/order')
+        fetch('https://hidden-hollows-67955.herokuapp.com/order')
         .then(res=>res.json())
         .then(data=>{
             const myorder = data.filter(pro=> pro.email === user.email)
@@ -42,7 +42,7 @@ const Dashbord = () => {
         })
     },[order])
     const deleteOwnOrder =(id)=>{
-        const url = `http://localhost:5000/order${id}`
+        const url = `https://hidden-hollows-67955.herokuapp.com/order${id}`
         const confirm = window.confirm('are you sure to cancle your order')
         if(confirm){
             fetch(url,{
@@ -100,13 +100,12 @@ const Dashbord = () => {
                     <textarea name="" id="" onBlur={handleText} ></textarea> <br/>
                     <button onClick={()=>{review(rateing, text)}} className="btn btn-primary">Submit</button>
                 </div>
-                <div className="col-md-5 col-12 text-center">
+                <div className="review col-md-5 col-12 text-center">
                         <img className="img-fluid" src="https://i.ibb.co/DMWRtD2/card.png" alt="" />
                         <h3>payment system coming soon</h3>
                 </div>
                 
                 <div className="col-md-5">
-                    <button>LogOut</button>
                 </div>
             </div>
             </div>

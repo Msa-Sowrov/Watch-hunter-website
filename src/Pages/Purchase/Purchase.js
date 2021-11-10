@@ -10,7 +10,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({})
     const {id} = useParams()
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://hidden-hollows-67955.herokuapp.com/products')
         .then(res=>res.json())
         .then(data=>{
             const product = data.find(pro=> pro._id=== id)
@@ -44,7 +44,7 @@ const Purchase = () => {
             status:'pending',
             time:new Date().toLocaleString()
         }
-        fetch('http://localhost:5000/order',{
+        fetch('https://hidden-hollows-67955.herokuapp.com/order',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

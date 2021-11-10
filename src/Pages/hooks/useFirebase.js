@@ -6,6 +6,7 @@ const useFirebase = () =>{
     initApp()
     const [user, setUser] = useState({})
     const [error, setError] = useState({})
+    const [profile, setProfile] = useState({})
     const [loding, setLoding] = useState(true)
     const auth = getAuth();
     
@@ -67,6 +68,14 @@ const useFirebase = () =>{
         });
       },[])
       
+      useEffect(()=>{
+        fetch('https://hidden-hollows-67955.herokuapp.com/user')
+        .then(res=>res.json())
+        .then(data=>{
+            const profiles = data.find(pro=>pro.email === user.email)
+            setProfile(profiles)
+        })
+    },[user])
 
     return{
         signUp,
@@ -74,7 +83,8 @@ const useFirebase = () =>{
         error,
         login,
         logOut,
-        loding
+        loding,
+        profile
     }
 }
 export default useFirebase

@@ -11,11 +11,14 @@
 
 }
 .review{
-    border: 1px solid lightcoral;
+    border: 1px solid rgba(241, 175, 175, 0.842);
     padding: 20px;
     border-radius: 10px;
 
     
+}
+.review button{
+    margin-right: 5px;
 }
 .orderlist{
     padding: 20px;

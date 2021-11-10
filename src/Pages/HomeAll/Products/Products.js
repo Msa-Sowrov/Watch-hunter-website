@@ -5,14 +5,17 @@ const Products = () => {
     let [products, setProducts] = useState([])
     products = products.slice(6)
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://hidden-hollows-67955.herokuapp.com/products')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
     return (
         <div>
             <div className="container">
-                <h1 className="m-auto">Our Products</h1>
+                <div className="text-center my-4">
+                <h1 className="text-primary">Our Products</h1>
+
+                </div>
                 <div className="row" >
                     {
                         products.map(pro=><div key={pro._id} className="col-md-4 col-12 mb-4">
@@ -23,9 +26,9 @@ const Products = () => {
                                     <p className="card-text">{pro.desf}</p>
                                     <small>price: {pro.price}</small>
                                 </div>
-                                <div className="card-footer">
+                                <div className="text-center card-footer">
                                     <Link to={`purchase${pro._id}`}>
-                                     <button>purchase</button>
+                                     <button className="btn btn-primary">purchase</button>
                                     </Link>
                                 </div>
                                 </div>

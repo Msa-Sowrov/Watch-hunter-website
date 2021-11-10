@@ -4,14 +4,14 @@ import ReactRating from "react-rating";
 const Reveiw = () => {
     const [review, setReview] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('https://hidden-hollows-67955.herokuapp.com/review')
         .then(res=>res.json())
         .then(data=>setReview(data))
     },[])
     return (
         <div>
             <div className="container">
-                <div className="text-center">
+                <div className="text-center my-4">
                     <h1 className="text-primary">Testimonial</h1>
                 </div>
                 <div className="row">
