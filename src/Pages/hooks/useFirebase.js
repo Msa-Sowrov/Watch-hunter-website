@@ -6,12 +6,14 @@ const useFirebase = () =>{
     initApp()
     const [user, setUser] = useState({})
     const [error, setError] = useState({})
+    const [loding, setLoding] = useState(true)
     const auth = getAuth();
     
     //sign up
     const signUp = (email, password, name)=>{
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((result) => {
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+           setLoding(true)
             setUser(result.user)
             setError('')
             setUserName(name)
@@ -20,6 +22,9 @@ const useFirebase = () =>{
   .catch((error) => {
     setError(error)
   })
+  .finally(
+        setLoding(false)
+      )
     }
     const setUserName =(name)=>{
       updateProfile(auth.currentUser, {displayName: name})
@@ -29,22 +34,26 @@ const useFirebase = () =>{
     }
       //login
       const login = (email, password)=>{
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                setUser(result.user)
-            })
-            .catch((error) => {
-                setError(error)
-            });
+        setLoding(true)
+        return signInWithEmailAndPassword(auth, email, password)
+            .finally(
+              setLoding(false)
+            )
     }
 
     //logout
     const logOut = () =>{
         signOut(auth).then(() => {
             // Sign-out successful.
-          }).catch((error) => {
+            setLoding(true)
+          })
+          .catch((error) => {
             // An error happened.
-          });
+          })
+          .finally(
+        setLoding(false)
+
+          )
           
     }
     useEffect(()=>{
@@ -54,8 +63,9 @@ const useFirebase = () =>{
           } else {
             setUser({})
           }
+          setLoding(false)
         });
-  },[])
+      },[])
 
 
 
@@ -64,7 +74,8 @@ const useFirebase = () =>{
         user,
         error,
         login,
-        logOut
+        logOut,
+        loding
     }
 }
 export default useFirebase

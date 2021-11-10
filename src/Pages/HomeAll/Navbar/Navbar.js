@@ -4,7 +4,6 @@ import useAuth from '../../hooks/useAuth';
 
 const Navbar = () => {
   const {user, logOut} = useAuth();
-  console.log(user)
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -21,10 +20,11 @@ const Navbar = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/explore">Explore</Link>
         </li>
-        
         <li className="nav-item">
-          <Link className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</Link>
+          <Link className="nav-link active" aria-current="page" to="/dashbord">Dashbord</Link>
         </li>
+        
+        
       </ul>
       <form className="d-flex">
         {
@@ -32,7 +32,7 @@ const Navbar = () => {
             <button onClick={logOut} className="btn btn-danger">Logout</button>
             :
             <Link to="/signin">
-                <button className="btn btn-warning">login</button>
+                <button className="btn">login</button>
           </Link>
           }
           

@@ -1,13 +1,22 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './LoginPage.css'
 const SignIn = () => {
     const { register, handleSubmit, reset } = useForm();
+    const location = useLocation();
+    const history = useHistory();
     const {login} = useAuth();
+    const redirect_uri = location.state?.from || '/'
     const onSubmit = data =>{
         login(data.email, data.password)
+        .then((result) => {
+            history.push(redirect_uri)
+          })
+          .catch((error) => {
+          })
         reset()
     } 
     return (

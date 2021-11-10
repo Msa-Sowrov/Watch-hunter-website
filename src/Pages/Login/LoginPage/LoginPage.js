@@ -11,7 +11,18 @@ const LoginPage = () => {
             return
         }
         signUp(data.email, data.password, data.name)
-        console.log(user)
+        
+        data = {
+            name:data.name,
+            email:data.email
+        }
+        fetch('http://localhost:5000/user',{
+            method:'post',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
     } 
     return (
         <div>
