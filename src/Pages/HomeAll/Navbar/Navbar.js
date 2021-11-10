@@ -1,9 +1,20 @@
 import React from 'react';
+import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Navbar = () => {
   const {user, logOut} = useAuth();
+  const [realUser, setRealUser] = useState({})
+  useEffect(()=>{
+    fetch('http://localhost:5000/user')
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      const u = data.find(o=>o.email === user.email)
+      setRealUser(u)
+    })
+  },[user])
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -20,11 +31,20 @@ const Navbar = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/explore">Explore</Link>
         </li>
+
+        { user.email && (
+        realUser?.role === 'admin' ?
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/dashbord">Dashbord</Link>
+          <Link className="nav-link active" aria-current="page" to="/adminDashbord">DashBord</Link>
         </li>
+        :
+        <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/dashbord">Dashbord</Link>
+      </li>
+          )
+        }
         
-        
+
       </ul>
       <form className="d-flex">
         {
@@ -36,7 +56,7 @@ const Navbar = () => {
           </Link>
           }
           
-       <span>sign in as:{user.displayName}</span>
+       <span>sign in as:{realUser?.name}</span>
       </form>
     </div>
   </div>

@@ -10,6 +10,7 @@ import SignIn from './Pages/Login/LoginPage/SignIn';
 import PrivateRoute from './Pages/Context/PrivateRouter/PrivateRoute';
 import Purchase from './Pages/Purchase/Purchase';
 import Dashbord from './Pages/Dashbord/Dashbord';
+import AdminDashbord from './Pages/AdminDashbord/AdminDashbord';
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
         <PrivateRoute path="/dashbord">
           <Navbar></Navbar>
           <Dashbord></Dashbord>
+          </PrivateRoute>
+        <PrivateRoute path="/adminDashbord">
+          <Navbar></Navbar>
+          <AdminDashbord></AdminDashbord>
           </PrivateRoute>
         <Route path="/signin">
           <Navbar></Navbar>

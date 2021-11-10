@@ -1,0 +1,11 @@
+.table button{
+    background-color: lightseagreen;
+    color: white;
+}
+.add-products input{
+    width: 90%;
+    margin-bottom: 10px;
+    border: 1px solid lightskyblue;
+    padding: 5px;
+    border-radius: 10px;
+}

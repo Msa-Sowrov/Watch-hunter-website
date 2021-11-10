@@ -66,8 +66,7 @@ const useFirebase = () =>{
           setLoding(false)
         });
       },[])
-
-
+      
 
     return{
         signUp,
