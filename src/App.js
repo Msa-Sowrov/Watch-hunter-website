@@ -13,6 +13,7 @@ import Dashbord from './Pages/Dashbord/Dashbord';
 import AdminDashbord from './Pages/AdminDashbord/AdminDashbord';
 import Footer from './Pages/Footer/Footer';
 import AdminRoute from './Pages/AdminRoute/AdminRoute';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
             </SignIn>
           <Footer></Footer>
 
+          </Route>
+        <Route path="*">
+          <NotFound></NotFound>
           </Route>
       </Switch>
     </BrowserRouter>
